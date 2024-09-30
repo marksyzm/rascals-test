@@ -1,0 +1,10 @@
+{
+  "name": "mockoon",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "mockoon-cli start --data mockoon.json --port 3001"
+  },
+  "devDependencies": {
+    "@mockoon/cli": "^8.4.0"
+  }
+}

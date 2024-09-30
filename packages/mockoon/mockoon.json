@@ -1,0 +1,153 @@
+{
+  "name": "RascalDelivery",
+  "endpointPrefix": "api/v1",
+  "port": 3001,
+  "uuid": "7076ccdd-d1e9-480d-baff-6951e81b03cc",
+  "lastMigration": 32,
+  "latency": 0,
+  "hostname": "",
+  "rootChildren": [
+    {
+      "type": "route",
+      "uuid": "d7bca03c-a256-4860-9260-f0e9583af172"
+    },
+    {
+      "type": "route",
+      "uuid": "19ddf816-de21-42c7-90ff-acef3bd64471"
+    },
+    {
+      "type": "route",
+      "uuid": "3e9b282a-79b0-460d-a3b5-179580a7629f"
+    }
+  ],
+  "folders": [],
+  "routes": [
+    {
+      "uuid": "d7bca03c-a256-4860-9260-f0e9583af172",
+      "type": "http",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "products",
+      "responses": [
+        {
+          "uuid": "4c330fef-54dd-4de7-b03a-b78371e5891e",
+          "body": "{}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "bodyType": "DATABUCKET",
+          "filePath": "",
+          "databucketID": "yg5k",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true,
+          "crudKey": "id",
+          "callbacks": []
+        }
+      ],
+      "responseMode": null
+    },
+    {
+      "uuid": "19ddf816-de21-42c7-90ff-acef3bd64471",
+      "type": "crud",
+      "documentation": "",
+      "method": "",
+      "endpoint": "users",
+      "responses": [
+        {
+          "uuid": "aa5a8f2e-ad2a-4865-96f8-d6a5de88f4e0",
+          "body": "{}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "bodyType": "DATABUCKET",
+          "filePath": "",
+          "databucketID": "n4ge",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true,
+          "crudKey": "id",
+          "callbacks": []
+        }
+      ],
+      "responseMode": null
+    },
+    {
+      "uuid": "3e9b282a-79b0-460d-a3b5-179580a7629f",
+      "type": "crud",
+      "documentation": "",
+      "method": "",
+      "endpoint": "deliveries",
+      "responses": [
+        {
+          "uuid": "b19d71a9-df4d-4cba-9ee0-c3b015967826",
+          "body": "{}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "bodyType": "DATABUCKET",
+          "filePath": "",
+          "databucketID": "yov2",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true,
+          "crudKey": "id",
+          "callbacks": []
+        }
+      ],
+      "responseMode": null
+    }
+  ],
+  "proxyMode": false,
+  "proxyHost": "",
+  "proxyRemovePrefix": false,
+  "tlsOptions": {
+    "enabled": false,
+    "type": "CERT",
+    "pfxPath": "",
+    "certPath": "",
+    "keyPath": "",
+    "caPath": "",
+    "passphrase": ""
+  },
+  "cors": true,
+  "headers": [],
+  "proxyReqHeaders": [],
+  "proxyResHeaders": [],
+  "data": [
+    {
+      "uuid": "f82507e5-86c6-4341-8839-a8830e900780",
+      "id": "n4ge",
+      "name": "users",
+      "documentation": "",
+      "value": "[\n]"
+    },
+    {
+      "uuid": "fc9bd311-c4e9-4b8f-8670-4fadbebb7dfe",
+      "id": "yg5k",
+      "name": "products",
+      "documentation": "",
+      "value": "[\n  {\n    \"id\": \"bb97bf36-2616-47d3-9e36-c9823076e22b\n    \"name\": \"Food Mixer\",\n    \"type\": \"small\"\n  },\n  {\n    \"id\": \"eb55af74-3f6d-4645-9683-a006511dcd12\"\n    \"name\": \"Washing Machine\",\n    \"type\": \"large\"\n  }\n]"
+    },
+    {
+      "uuid": "165d4d1c-c4bc-4c64-98db-27352aa7b354",
+      "id": "yov2",
+      "name": "deliveries",
+      "documentation": "",
+      "value": "[\n  {{#repeat 10}}\n  {\n    \"id\": \"{{guid}}\",\n    \"userId\": \"{{guid}}\",\n    \"productId\": \"{{oneOf (array 'bb97bf36-2616-47d3-9e36-c9823076e22b' 'eb55af74-3f6d-4645-9683-a006511dcd12')}}\",\n    \"date\": \"{{dateTimeShift format='yyyy-MM-dd' days=@index}}\",\n    \"period\": \"{{oneOf (array 'AM' 'PM' 'EVE')}}\"\n  }\n  {{/repeat}}\n]"
+    }
+  ],
+  "callbacks": []
+}
