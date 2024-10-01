@@ -83,7 +83,7 @@ export default function Delivery({
         acc[`${delivery.date}-${delivery.period}`] = delivery
         return acc
       }, {}) || {},
-    [deliveries, product]
+    [deliveries]
   )
   console.log("deliveriesIndex", deliveriesIndex)
   const { width } = Dimensions.get("window")
