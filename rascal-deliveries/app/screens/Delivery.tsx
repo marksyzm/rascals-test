@@ -1,4 +1,10 @@
-import { Dimensions, ScrollView, StyleSheet, Text, View } from "react-native"
+import {
+  ScrollView,
+  StyleSheet,
+  Text,
+  useWindowDimensions,
+  View,
+} from "react-native"
 import {
   Delivery as DeliveryType,
   Period,
@@ -90,7 +96,7 @@ export default function Delivery({
     [deliveries]
   )
   console.log("deliveriesIndex", deliveriesIndex)
-  const { width } = Dimensions.get("window")
+  const { width } = useWindowDimensions()
 
   return (
     <>
