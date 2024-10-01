@@ -17,9 +17,9 @@ export const deliveriesApi = createApi({
       query: () => ({
         url: `/deliveries`,
         method: "GET",
-        providesTags: ["DELIVERIES"],
         cache: "no-cache",
       }),
+      providesTags: ["DELIVERIES"],
     }),
     createDelivery: builder.mutation<Delivery, Omit<Delivery, "id">>({
       query: (body) => ({
