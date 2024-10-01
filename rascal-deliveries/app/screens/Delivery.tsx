@@ -71,8 +71,12 @@ export default function Delivery({
         productId: product.id,
         userId: userId,
       })
-      console.log("Delivery created", response.data)
-      navigation.navigate("Complete", { product, delivery: response.data! })
+      if (response.data) {
+        console.log("Delivery created", response.data)
+        navigation.navigate("Complete", { product, delivery: response.data! })
+      } else {
+        console.error("Error creating delivery", response.error)
+      }
     },
     [createDelivery, product, userId]
   )
