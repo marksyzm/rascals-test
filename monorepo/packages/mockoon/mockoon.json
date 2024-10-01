@@ -123,7 +123,24 @@
     "passphrase": ""
   },
   "cors": true,
-  "headers": [],
+  "headers": [
+    {
+      "key": "Access-Control-Allow-Origin",
+      "value": "*"
+    },
+    {
+      "key": "Access-Control-Allow-Methods",
+      "value": "GET,POST,PUT,PATCH,DELETE,HEAD,OPTIONS"
+    },
+    {
+      "key": "Access-Control-Allow-Headers",
+      "value": "Content-Type, Origin, Accept, Authorization, Content-Length, X-Requested-With"
+    },
+    {
+      "key": "Content-Type",
+      "value": "application/json"
+    }
+  ],
   "proxyReqHeaders": [],
   "proxyResHeaders": [],
   "data": [
@@ -139,7 +156,7 @@
       "id": "yg5k",
       "name": "products",
       "documentation": "",
-      "value": "[\n  {\n    \"id\": \"bb97bf36-2616-47d3-9e36-c9823076e22b\n    \"name\": \"Food Mixer\",\n    \"type\": \"small\"\n  },\n  {\n    \"id\": \"eb55af74-3f6d-4645-9683-a006511dcd12\"\n    \"name\": \"Washing Machine\",\n    \"type\": \"large\"\n  }\n]"
+      "value": "[\n  {\n    \"id\": \"bb97bf36-2616-47d3-9e36-c9823076e22b\",\n    \"name\": \"Food Mixer\",\n    \"type\": \"small\"\n  },\n  {\n    \"id\": \"eb55af74-3f6d-4645-9683-a006511dcd12\",\n    \"name\": \"Washing Machine\",\n    \"type\": \"large\"\n  }\n]"
     },
     {
       "uuid": "165d4d1c-c4bc-4c64-98db-27352aa7b354",
